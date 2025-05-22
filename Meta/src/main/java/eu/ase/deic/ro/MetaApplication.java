@@ -9,5 +9,6 @@ public class MetaApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(MetaApplication.class, args);
 	}
+	
 
 }
