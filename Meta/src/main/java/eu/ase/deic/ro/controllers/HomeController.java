@@ -28,5 +28,9 @@ public class HomeController {
 		 List<Rooms> rooms = roomsService.getAllRooms();
 		  return rooms;
 	}
+	@RequestMapping("/rooms/sorted")
+	public List<Rooms> getAllRoomsSorted(){
+		return roomsService.getSortByPrice();
+	}
 
 }

@@ -7,7 +7,7 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "rooms")
 
-public class Rooms {
+public class Rooms  {
  @Id
  @GeneratedValue(strategy = GenerationType.IDENTITY)
  @Column(name = "id_camera")
