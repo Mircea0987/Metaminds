@@ -7,6 +7,8 @@ import jakarta.persistence.*;
 import java.time.LocalDate;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 @Table(name = "locatari")
 
@@ -39,6 +41,7 @@ public class Locatari {
     private Boolean esteStudent;
 
     @ManyToMany(mappedBy = "locatari")
+    @JsonBackReference
     private List<Apartamente> apartamente;
 
 	public Long getIdLoc() {

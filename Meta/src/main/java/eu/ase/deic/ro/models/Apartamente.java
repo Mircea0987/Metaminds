@@ -6,6 +6,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 @Table(name = "apartamente")
 
@@ -45,6 +47,7 @@ public class Apartamente {
  private List<Facturi> facturi;
 
  @OneToMany(mappedBy = "apartament")
+ @JsonManagedReference
  private List<Recenzii> recenzii;
 
  @ManyToMany
@@ -53,6 +56,7 @@ public class Apartamente {
      joinColumns = @JoinColumn(name = "id_apartament"),
      inverseJoinColumns = @JoinColumn(name = "id_locatar")
  )
+ @JsonManagedReference
  private List<Locatari> locatari;
 
 public Long getId() {

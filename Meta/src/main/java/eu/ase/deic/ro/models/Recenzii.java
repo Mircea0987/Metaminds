@@ -5,6 +5,8 @@ import jakarta.persistence.*;
 
 import java.time.LocalDate;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 @Table(name = "recenzii")
 
@@ -25,6 +27,7 @@ public class Recenzii {
 
  @ManyToOne
  @JoinColumn(name = "id_apartament")
+ @JsonBackReference
  private Apartamente apartament;
 
  @ManyToOne

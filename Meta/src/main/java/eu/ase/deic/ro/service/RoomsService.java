@@ -50,5 +50,8 @@ public class RoomsService {
 		}).toList();
 		
 	}
+	public void saveRoom(Rooms r) {
+		roomsRepo.save(r);
+	}
 
 }
