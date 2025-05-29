@@ -23,7 +23,9 @@ public class RoomsService {
 	}
 	
 	public Rooms getRoomById(Long id) {
-	    return roomsRepo.findById(id).orElseThrow(() -> new RoomNotFoundException(id));
+		
+	    return roomsRepo.findById(id).orElse(null);
+	    
 	}
 	
 	public List<Rooms> getAllAvailableRooms(){

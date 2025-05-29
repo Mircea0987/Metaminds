@@ -3,6 +3,9 @@ package eu.ase.deic.ro.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,8 +24,18 @@ public class RoomsController {
 	RoomsService roomsService;
 	
 	@GetMapping("/room/{id}")
-	public Rooms getRoomById(@PathVariable("id") Long id) {
-		return roomsService.getRoomById(id);
+	public ResponseEntity<Rooms> getRoomById(@PathVariable("id") Long id) {
+				
+		Rooms r = roomsService.getRoomById(id);
+		
+		if(r != null) {
+			
+			return new ResponseEntity<Rooms>(r,HttpStatus.OK);
+			
+		}else {
+			
+			return new ResponseEntity<Rooms>(HttpStatus.NOT_FOUND);
+		}
 	}
 	
 	@GetMapping("rooms/available")
