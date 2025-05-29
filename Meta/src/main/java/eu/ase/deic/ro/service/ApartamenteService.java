@@ -18,4 +18,8 @@ public class ApartamenteService {
 
 		return apartamentRepo.findAll();
 	}
+	
+	public Apartamente getApartmentById(Long id) {
+		return apartamentRepo.findById(id).orElse(null);
+	}
 }

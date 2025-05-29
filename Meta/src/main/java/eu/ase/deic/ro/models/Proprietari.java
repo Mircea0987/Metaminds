@@ -1,7 +1,5 @@
 package eu.ase.deic.ro.models;
 
-
-
 import jakarta.persistence.*;
 
 
@@ -87,6 +85,5 @@ public void setaVerificat(Boolean aVerificat) {
 public void setCont(Conturi cont) {
 	this.cont = cont;
 }
- 
  
 }

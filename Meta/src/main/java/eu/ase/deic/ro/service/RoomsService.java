@@ -21,9 +21,11 @@ public class RoomsService {
 		
 		return roomsRepo.findAll();
 	}
+	
 	public Rooms getRoomById(Long id) {
 	    return roomsRepo.findById(id).orElseThrow(() -> new RoomNotFoundException(id));
 	}
+	
 	public List<Rooms> getAllAvailableRooms(){
 		
 		List<Rooms> room = roomsRepo.findAll();
@@ -34,6 +36,7 @@ public class RoomsService {
 		return room.stream().filter(Rooms::getEsteDisponibil).toList();
 		
 	}
+	
 	public List<Rooms> getSortByPrice() {
 		
 		List<Rooms> room = roomsRepo.findAll();
@@ -50,8 +53,17 @@ public class RoomsService {
 		}).toList();
 		
 	}
+	
 	public void saveRoom(Rooms r) {
 		roomsRepo.save(r);
+	}
+	
+	public void deleteRoomById(Long id) {
+		roomsRepo.deleteById(id);
+	}
+	
+	public void updateRoom(Rooms room) {
+		roomsRepo.save(room);
 	}
 
 }

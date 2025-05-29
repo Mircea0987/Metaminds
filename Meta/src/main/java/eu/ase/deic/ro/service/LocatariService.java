@@ -18,10 +18,10 @@ public class LocatariService {
 	public List<Locatari>getAllLocatari(){
 		return locatariRepo.findAll();
 	}
+	
 	public Locatari getLocatarById(Long id){
 		return locatariRepo.findById(id).orElseThrow(()-> new LocatariExeception(id));
 	}
-	public void addLocatar(Locatari l) {
-		locatariRepo.save(l);
-	}
+	
+	
 }

@@ -40,7 +40,7 @@ public class Locatari {
     @Column(name = "este_student")
     private Boolean esteStudent;
 
-    @ManyToMany(mappedBy = "locatari")
+    @ManyToMany
     @JsonBackReference
     private List<Apartamente> apartamente;
 

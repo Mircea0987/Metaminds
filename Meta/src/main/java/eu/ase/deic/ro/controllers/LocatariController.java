@@ -18,17 +18,13 @@ public class LocatariController {
 	@Autowired
 	LocatariService locatariService;
 
-	
 	@GetMapping("/locatari/{id}")
 	public Locatari gettLocatariById(@PathVariable("id") Long id){
 		return locatariService.getLocatarById(id);
 	}
+	
 	@GetMapping("/locatari")
 	public List<Locatari> getAllLocatari(){
 		return locatariService.getAllLocatari();
-	}
-	@PostMapping("/locatari/save")
-	public void saveLocatari(@RequestBody Locatari l) {
-		locatariService.addLocatar(l);
 	}
 }

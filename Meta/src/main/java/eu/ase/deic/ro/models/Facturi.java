@@ -5,6 +5,8 @@ import jakarta.persistence.*;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 @Table(name = "facturi")
 
@@ -19,6 +21,7 @@ public class Facturi {
  private TipFacturi tipFactura;
 
  @ManyToMany(mappedBy = "facturi")
+ @JsonBackReference
  private List<Apartamente> apartamente;
 
 public Long getIdFactura() {

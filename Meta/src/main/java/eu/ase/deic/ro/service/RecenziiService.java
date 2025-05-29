@@ -17,5 +17,8 @@ public class RecenziiService {
 	public List<Recenzii> getAllReviews(){
 		return reviewRepo.findAll();
 	}
+	public Recenzii getAllRecenziiById(Long id) {
+		return reviewRepo.findById(id).orElse(null);
+	}
 	
 }

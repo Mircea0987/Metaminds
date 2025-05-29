@@ -1,6 +1,5 @@
 package eu.ase.deic.ro.models;
 
-
 import jakarta.persistence.*;
 
 
@@ -8,6 +7,7 @@ import jakarta.persistence.*;
 @Table(name = "facilitati")
 
 public class Facilitati {
+	
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -30,6 +30,5 @@ public class Facilitati {
 	public void setDescriere(String descriere) {
 		this.descriere = descriere;
 	}
-    
     
 }
